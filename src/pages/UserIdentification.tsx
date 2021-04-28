@@ -10,6 +10,7 @@ import {
   TouchableWithoutFeedback,
   Platform,
   Keyboard,
+  Alert,
 } from "react-native";
 import { Button } from "../components/Button";
 import colors from "../styles/colors";
@@ -34,6 +35,8 @@ export function UserIdentification() {
   }
 
   function handleSubmit() {
+    if (!name) return Alert.alert("Me diz como chamar você 😢");
+
     navigation.navigate("Confirmation");
   }
 
